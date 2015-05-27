@@ -7,19 +7,14 @@
   <title><%= content_for?(:title) ? yield(:title) : "zox" %></title>
     <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  
-
-    <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 </head>
 <body>
 <div class="container">
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       <%= yield %>
+      <%= bootstrap_flash %>
+      <%= yield %>
 </div>
     
 
 <%= javascript_include_tag 'application' %>
-<%= yield(:page_javascript) if content_for?(:page_javascript) %>
 </body>
 </html>
