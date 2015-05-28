@@ -1,6 +1,6 @@
 module ApplicationHelper
 	  ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
-
+  
   def bootstrap_flash(options = {})
     flash_messages = []
     flash.each do |type, message|
@@ -8,7 +8,7 @@ module ApplicationHelper
 
       type = type.to_sym
       type = :success if type == :notice
-      type = :danger  if type == :alert
+      type = :warning  if type == :alert
       type = :danger  if type == :error
       next unless ALERT_TYPES.include?(type)
 
@@ -20,5 +20,9 @@ module ApplicationHelper
       end
     end
     flash_messages.join("\n").html_safe
+  end
+  
+  def ist(time)
+    time.in_time_zone(TZInfo::Timezone.get('Asia/Kolkata'))
   end
 end

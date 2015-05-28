@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'therubyracer', platforms: :ruby
-gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,3 +39,40 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+
+gem 'devise'
+gem 'simple_form'
+gem 'jacky'
+gem 'email_validator'
+gem 'autoprefixer-rails'
+gem 'thin'
+gem 'redis'
+gem 'hiredis'
+gem 'redis-rails'
+gem 'exception_notification'
+gem 'haml'
+gem 'haml-rails'
+gem 'carrierwave'
+gem "paperclip", "~> 4.2"
+gem "gon"
+
+
+group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-rescue'
+  gem 'pry-doc'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'did_you_mean'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'mocha'
+end
+
+gem 'rack-mini-profiler'
+gem 'flamegraph'
+gem 'stackprof'
