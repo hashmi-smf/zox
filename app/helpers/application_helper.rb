@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def normalized_controller_name
+    params[:controller].gsub(/\//,'-')
+  end
+  
 	  ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
   
   def bootstrap_flash(options = {})

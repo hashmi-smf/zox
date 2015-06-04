@@ -1,6 +1,7 @@
 @import "bootswatch-dist/css/bootstrap.min.css";
-
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
+ 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,8 +13,49 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *
  *= require toastr
+ *= require bootstrap-datepicker
  *= require_self
  */
+/* User sign in and sign forms. */
+.border-form-div {
+  
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+#signup{
+	padding-top: 30px;
+}
+
+.page-header{
+ margin: 0px;
+ padding-bottom: 9px;
+ padding-top: 30px;
+
+}
+ footer{
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+}
+.content{
+  min-height: 400px;
+}

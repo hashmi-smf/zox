@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootswatch-dist
 //= require toastr
+//= require bootstrap-datepicker
 
 $(document).ready(function() {
 	

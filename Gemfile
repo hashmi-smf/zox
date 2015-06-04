@@ -55,7 +55,8 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem "paperclip", "~> 4.2"
 gem "gon"
-
+gem "font-awesome-sass", "~> 4.3.0"
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'pry'

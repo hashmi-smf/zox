@@ -1,6 +1,6 @@
 {
   "name": "bootswatch-dist",
-  "version": "3.3.0-united",
+  "version": "3.3.0-yeti",
   "homepage": "https://github.com/dbtek/bootswatch-dist",
   "authors": [
     "İsmail Demirbilek <ce.demirbilek@gmail.com>"
@@ -45,13 +45,13 @@
     "Gruntfile.js",
     ".gitignore"
   ],
-  "_release": "3.3.0-united",
+  "_release": "3.3.0-yeti",
   "_resolution": {
     "type": "version",
-    "tag": "3.3.0-united",
-    "commit": "43b02b105d1be9c363b7fe963831122fe2d43d74"
+    "tag": "3.3.0-yeti",
+    "commit": "914571a7a07b0e2f8b8adba07bc062131c4ff698"
   },
   "_source": "git://github.com/dbtek/bootswatch-dist.git",
-  "_target": "3.3.0-united",
+  "_target": "3.3.0-yeti",
   "_originalSource": "bootswatch-dist"
 }

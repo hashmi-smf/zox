@@ -48,6 +48,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.4.0)
+      railties (>= 3.0)
     builder (3.2.2)
     bullet (4.14.7)
       activesupport (>= 3.0.0)
@@ -103,6 +105,8 @@ GEM
       rake-compiler
     flamegraph (0.1.0)
       fast_stack
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     gon (5.2.3)
@@ -303,6 +307,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
+  bootstrap-datepicker-rails
   bullet
   byebug
   capybara
@@ -313,6 +318,7 @@ DEPENDENCIES
   email_validator
   exception_notification
   flamegraph
+  font-awesome-sass (~> 4.3.0)
   gon
   haml
   haml-rails

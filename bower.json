@@ -18,7 +18,7 @@
     "jquery-ujs": "~1.0.3",
     "bootstrap": "~3.3.4",
     "toastr": "2.1.0",
-    "bootswatch-dist": "3.3.0-united",
-    "font-awesome": "~4.3.0"
+    "bootswatch-dist": "3.3.0-yeti",
+    
   }
 }

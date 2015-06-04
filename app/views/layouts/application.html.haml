@@ -9,8 +9,33 @@
     = include_gon
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
-  %body
+    = yield(:head)
+  
+  %body{class: normalized_controller_name}
+    -#nav
     .container
-      = bootstrap_flash
-      = yield
-    = javascript_include_tag 'application'
+      = render 'shared/nav'
+    
+    -# header
+    %h1.page-header
+      .container
+        = content_for?(:header) ? yield(:header) : @title
+        - if content_for?(:secondary_nav)
+          .pull-right= yield(:secondary_nav)
+    -# flash messages
+    #flash-messages.container= bootstrap_flash
+    -# content
+    .container
+      .content
+        = yield
+    
+    -# footer
+    %footer
+      .container
+        %p.muted
+          %span
+            Cosmicvent Software &copy; 2015. All Rights Reserved.
+          %small.pull-right
+            V#{Jacky::Git.version}
+    = javascript_include_tag "application"
+    = yield(:javascript)

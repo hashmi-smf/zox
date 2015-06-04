@@ -1,0 +1,10 @@
+- links.each do |text, url|
+  - if url.is_a?(Hash)
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        = text
+        %b.caret
+      %ul.dropdown-menu
+        = render 'shared/navlist', links: url
+  - else
+    = nav_node text, url
