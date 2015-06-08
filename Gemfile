@@ -56,8 +56,7 @@ gem 'carrierwave'
 gem "paperclip", "~> 4.2"
 gem "gon"
 gem "font-awesome-sass", "~> 4.3.0"
-gem 'bootstrap-datepicker-rails'
-
+gem 'jquery-ui-rails'
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'

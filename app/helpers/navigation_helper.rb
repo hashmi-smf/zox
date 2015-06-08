@@ -46,6 +46,8 @@ module NavigationHelper
       admin: {
         'Home'       => root_path,
         'Events'     => events_path,
+        'Leads'      => leads_path,
+        'Sites'      => sites_path
         
 
       },

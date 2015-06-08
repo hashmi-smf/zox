@@ -1,7 +1,7 @@
 @import "bootswatch-dist/css/bootstrap.min.css";
 @import "font-awesome-sprockets";
 @import "font-awesome";
- 
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,7 +14,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require toastr
- *= require bootstrap-datepicker
+ *= require jquery-ui/datepicker
  *= require_self
  */
 /* User sign in and sign forms. */
@@ -45,9 +45,9 @@
 }
 
 .page-header{
- margin: 0px;
+ margin: 42px 0px 21px;
  padding-bottom: 9px;
- padding-top: 30px;
+ padding-top: 9px;
 
 }
  footer{

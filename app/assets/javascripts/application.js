@@ -13,8 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootswatch-dist
+//= require jquery-ui/datepicker
 //= require toastr
-//= require bootstrap-datepicker
+
+
+
 
 $(document).ready(function() {
 	
@@ -37,5 +40,8 @@ $(document).ready(function() {
 	});
 
 
+$(document).ready(function() {
+  $('.datepicker').datepicker();
+});
 
 

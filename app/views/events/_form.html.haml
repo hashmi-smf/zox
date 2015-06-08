@@ -1,0 +1,20 @@
+.container
+  .row
+    = simple_form_for @event do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :name, placeholder: "Name"
+        = f.input :mobile, placeholder: "Mobile"
+        = f.association :user
+        = f.association :lead
+        = f.association :site
+        = f.input  :follow_up, class: "datepicker"
+
+      
+      .form-actions
+        = submit_tag 'Add Event', class: 'btn btn-success'
+
+    
+
+    

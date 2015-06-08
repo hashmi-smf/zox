@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :events
+  resources :leads
+  resources :sites
   root to: "events#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
