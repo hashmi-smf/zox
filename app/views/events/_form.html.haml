@@ -4,12 +4,20 @@
       = f.error_notification
 
       .form-inputs
-        = f.input :name, placeholder: "Name"
-        = f.input :mobile, placeholder: "Mobile"
-        = f.association :user
-        = f.association :lead
-        = f.association :site
-        = f.input  :follow_up, class: "datepicker"
+        .col-md-6
+          = f.input :name, placeholder: "Name"
+          = f.input :mobile, placeholder: "Mobile"
+          = f.input :budget, placeholder: "Budget"
+          = f.input :description, placeholder: "Descripiton"
+        .col-md-6
+          = f.association :user
+          = f.association :lead
+          = f.association :site
+          = f.input  :status
+      
+      = f.label :follow_up 
+      = f.date_select :follow_up, :label => "Follow_up"
+
 
       
       .form-actions

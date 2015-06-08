@@ -1,3 +1,25 @@
 - title 'Events'
-- secondary_link_to 'Customer',new_event_path, class: 'btn-default' 
-%h2 this is Hashmi
+- if current_user.role == "admin"
+  - secondary_link_to 'Event',new_event_path, class: 'btn-default' 
+%table.table.table-striped
+  %thead
+    %tr
+      %th Event Id
+      %th Event User
+      %th Site
+      %th Customer
+      %th Mobile
+      %th Status
+      %th FollowUp
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.id
+        %td= event.user.email.split('@')[0].capitalize
+        %td= event.site.name
+        %td= event.name
+        %td= event.mobile
+        %td= event.status
+        %td= event.follow_up
+
+ 
