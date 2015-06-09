@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 	def index
-		@events = current_user.events
+	if current_user.role != "admin"
+		@events = current_user.events.order(:follow_up).includes(:site)
+	else
+		@events = Event.all.order(:follow_up).includes(:site, :user)
+	end
 	end
 
 	def new

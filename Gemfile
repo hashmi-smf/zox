@@ -56,7 +56,6 @@ gem 'carrierwave'
 gem "paperclip", "~> 4.2"
 gem "gon"
 gem "font-awesome-sass", "~> 4.3.0"
-
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
