@@ -56,7 +56,7 @@ module NavigationHelper
       },
       anon: {
         'Home'      => root_path,
-        
+        'Events'    => events_path
       },
     }
   end

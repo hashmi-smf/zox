@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :email
       t.string :budget
       t.string :status
+      t.string :complete, default: "Pending"
       t.date :follow_up
       t.integer :lead_id
       t.integer :site_id

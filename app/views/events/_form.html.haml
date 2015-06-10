@@ -5,23 +5,34 @@
 
       .form-inputs
         .col-md-6
-          = f.input :name, placeholder: "Name"
-          = f.input :mobile, placeholder: "Mobile"
-          = f.input :budget, placeholder: "Budget"
-          = f.input :description, placeholder: "Descripiton"
+          - if current_user.role != "admin"
+            = f.input :name, placeholder: "Name", :disabled => true
+            = f.input :mobile, placeholder: "Mobile", :disabled => true
+            = f.input :email, placeholder: "Email", :disabled => true
+            = f.input :budget, placeholder: "Budget", :disabled => true
+            = f.input :description, placeholder: "Descripiton", :disabled => true
+          - else
+            = f.input :name, placeholder: "Name"
+            = f.input :mobile, placeholder: "Mobile"
+            = f.input :email, placeholder: "Email"
+            = f.input :budget, placeholder: "Budget"
+            = f.input :description, placeholder: "Descripiton"
         .col-md-6
-          = f.association :user
+          - if current_user.role != "admin"
+            = f.association :user, :disabled => true
+          - else
+            = f.association :user
+            
           = f.association :lead
           = f.association :site
-          = f.input  :status
-      
-      = f.label :follow_up 
-      = f.date_select :follow_up, :label => "Follow_up"
+          = f.select(:complete, options_for_select([['Complete', 'complete'], ['Pending','Pending'],['Hold','Hold']]), {prompt: "CurrentState"}, {class: "form-control"})
+          = f.input  :status  
+          = f.input :follow_up
 
 
       
       .form-actions
-        = submit_tag 'Add Event', class: 'btn btn-success'
+        = submit_tag 'Add Event', class: 'btn btn-success' 
 
     
 

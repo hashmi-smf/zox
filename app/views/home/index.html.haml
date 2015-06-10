@@ -1,0 +1,21 @@
+- title 'Home Page'
+- if current_user.role == "admin"
+  %div.col-md-6
+    .row
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Users: #{@users.count}
+        .panel-body
+          %table.table.table-striped
+            %thead
+              %tr
+                %th Name
+                %th Email
+            %tbody
+              - @users.each do |user|
+                %tr 
+                  %td 
+                    = user.email.split('@')[0].capitalize
+                  %td
+                    = user.email
+                    

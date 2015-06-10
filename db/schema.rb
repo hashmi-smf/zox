@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20150604070116) do
     t.string   "email"
     t.string   "budget"
     t.string   "status"
+    t.string   "complete",    default: "Pending"
     t.date     "follow_up"
     t.integer  "lead_id"
     t.integer  "site_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "leads", force: :cascade do |t|

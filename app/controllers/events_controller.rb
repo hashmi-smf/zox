@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 	def index
-	if current_user.role != "admin"
-		@events = current_user.events.order(:follow_up).includes(:site)
-	else
-		@events = Event.all.order(:follow_up).includes(:site, :user)
-	end
+	  if current_user.role != "admin"
+		@events = current_user.events.order(:follow_up == Date.today).includes(:site)
+	  else
+		@events = Event.all.order(:follow_up == Date.today).includes(:site, :user)
+	  end
 	end
 
 	def new
@@ -44,11 +44,16 @@ class EventsController < ApplicationController
 	private
 
 	def set_event
-		@event = current_user.event.find(params[:id])
+		if current_user.role == "admin"
+			@event = Event.find(params[:id])
+		else
+			@event = current_user.events.find(params[:id])
+		end
 	end
 
 	def event_params
      params.require(:event).permit(:name, :mobile, :budget, :email, :description, 
-     	                           :follow_up, :lead_id, :site_id, :status, :user_id)		
+                                   :complete,:follow_up, :lead_id, :site_id, :status, 
+                                   :user_id)		
 	end
 end
