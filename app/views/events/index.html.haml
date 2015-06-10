@@ -17,10 +17,10 @@
     - @events.each do |event|
       %tr
         %td= event.id
-        -if event.follow_up == Date.today
-          %td.label-warning
+        - if event.follow_up == Date.today
+          %td.label-danger
             = event.follow_up
-        -else
+        - else
           %td.label-info
             = event.follow_up
         %td= event.user.email.split('@')[0].capitalize

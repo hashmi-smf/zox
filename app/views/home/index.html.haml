@@ -1,21 +1,56 @@
-- title 'Home Page'
+- title "Home"
 - if current_user.role == "admin"
-  %div.col-md-6
+  %div.col-md-12
     .row
       .panel.panel-primary
         .panel-heading
           %h3.panel-title Users: #{@users.count}
+
         .panel-body
-          %table.table.table-striped
-            %thead
-              %tr
-                %th Name
-                %th Email
-            %tbody
-              - @users.each do |user|
-                %tr 
-                  %td 
-                    = user.email.split('@')[0].capitalize
-                  %td
-                    = user.email
-                    
+          .col-md-6
+            .well
+              %h3 All Today's Events : #{Event.where(:follow_up => "#{Date.today}").count}
+              %h3 Today's Complete Events : #{Event.where(:follow_up => "#{Date.today}", :complete => "Complete").count}
+              %hr
+              %h3 Total Complete     : #{Event.where(:complete => "Complete").count}
+              %h3 Total Pending     : #{Event.where(:complete => "Pending").count}
+              %h3 Total Hold     : #{Event.where(:complete => "Hold").count}
+              %h3 State to be Set     : #{Event.where(:complete => "Set State").count}
+              %hr
+              %h3 Total Events     : #{Event.count}
+          .col-md-6
+            .well
+              %table.table.table-striped
+                %thead
+                  %tr
+                    %th Name
+                    %th Email
+                %tbody
+                  - @users.each do |user|
+                    %tr 
+                      %td 
+                        = user.email.split('@')[0].capitalize
+                      %td
+                        = user.email
+
+%div.col-md-12
+  .row
+    .panel.panel-primary
+      .panel-heading
+        %h3.panel-title Hi #{current_user.email.split('@')[0].capitalize}
+      .panel-body                    
+        .col-md-6  
+          .well
+            %h3 Email : #{current_user.email}
+            %h3 Name  : #{current_user.email.split('@')[0].capitalize}
+            
+        .col-md-6
+          .well
+            %h3 Today's Tasks : #{current_user.events.where(:follow_up => "#{Date.today}").count}          
+            %h3 Alloted tasks : #{current_user.events.count}
+            %hr
+            %h3 Pending       : #{current_user.events.where(:complete => "Pending").count}
+            %h3 Hold       : #{current_user.events.where(:complete => "Hold").count}
+            %h3 Completed       : #{current_user.events.where(:complete => "Complete").count}
+
+

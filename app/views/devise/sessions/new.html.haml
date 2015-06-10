@@ -1,0 +1,22 @@
+- title 'Sign in'
+.col-md-6{:style => "border-right: solid 2px #ddd"}
+  .row
+    .col-md-8.col-md-offset-2
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, :class => "form-control"
+        .form-group
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "off" ,:class => "form-control"
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Sign in", :class => "btn btn-primary"
+      = link_to "Forgot your password?", new_user_password_path
+#signup.col-md-offset-1.col-md-4{:style => "padding-top:80px;"}
+  = link_to "Sign up", new_user_registration_path, :class => "btn btn-success btn-lg btn-block"

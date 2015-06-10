@@ -1,2 +1,16 @@
 - title 'Sites'
-%h2 this is Sites index page
+- secondary_link_to 'Site',new_site_path, class: 'btn-default' 
+.newlead
+%table.table.table-striped
+  %thead
+    %tr 
+      %th Name
+      %th Address
+      %th
+
+  %tbody
+    = render 'index'
+
+
+     
+

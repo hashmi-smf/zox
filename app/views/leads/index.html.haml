@@ -1,2 +1,16 @@
 - title 'Leads'
-%h2 this is leads index page
+- secondary_link_to 'Lead',new_lead_path, class: 'btn-default' 
+.newlead
+%table.table.table-striped
+  %thead
+    %tr 
+      %th Name
+      %th Website
+      %th
+
+  %tbody
+    = render 'index'
+
+
+     
+

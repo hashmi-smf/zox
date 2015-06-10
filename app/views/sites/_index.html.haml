@@ -1,0 +1,9 @@
+- @sites.each do |site|
+  %tr 
+    %td= site.name
+    %td= site.address
+    %td
+      = link_to edit_site_path(site), class: 'btn btn-info' do
+        %i.fa.fa-eye
+      = link_to site, :method => :delete, :data => {:confirm => 'Are you sure?'},class: 'btn btn-danger' do
+        %span.glyphicon.glyphicon-trash

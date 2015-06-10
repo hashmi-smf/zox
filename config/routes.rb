@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :leads
   resources :sites
   root to: "home#index"
+  
+  #resources :home , only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
