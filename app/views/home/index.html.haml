@@ -54,6 +54,6 @@
             %hr
             %h3 Pending       : #{current_user.events.where(:complete => "Pending").count}
             %h3 Hold       : #{current_user.events.where(:complete => "Hold").count}
-            %h3 Completed       : #{current_user.events.where(:complete => "Complete").count}
+            %h3 Completed       : #{current_user.events.where(:complete => "complete").count}
 
 
