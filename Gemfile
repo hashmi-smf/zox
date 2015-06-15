@@ -75,3 +75,5 @@ end
 gem 'rack-mini-profiler'
 gem 'flamegraph'
 gem 'stackprof'
+
+gem 'rails_12factor', group: :production
