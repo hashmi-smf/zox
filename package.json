@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "== README",
   "main": "index.js",
+  "dependencies": {
+    "bower": "~1.4.1"
+  },
   "directories": {
     "test": "test"
   },
