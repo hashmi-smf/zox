@@ -10,7 +10,7 @@
         %dd #{Event.where(:follow_up => "#{Date.today}", :complete => "Complete").count}
         %hr
         %dt Total Complete      
-        %dd #{Event.where(:complete => "Complete").count}
+        %dd #{Event.where(:complete => "complete").count}
         %dt Total Pending     
         %dd #{Event.where(:complete => "Pending").count}
         %dt Total Hold     
