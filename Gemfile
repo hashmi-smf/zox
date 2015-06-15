@@ -42,7 +42,7 @@ end
 
 gem 'devise'
 gem 'simple_form'
-gem 'jacky'
+gem 'jacky', group: :production
 gem 'email_validator'
 gem 'autoprefixer-rails'
 gem 'thin'

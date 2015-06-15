@@ -34,7 +34,7 @@
             %i.fa.fa-eye
           - if current_user.role == 'admin'
             = link_to event, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger' do
-              %span.glyphicon.glyphicon-trash
+              %i.fa.fa-trash-o
 
         
 
