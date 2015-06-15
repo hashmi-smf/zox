@@ -1,38 +1,41 @@
 - title "Home"
 - if current_user.role == "admin"
-  %div.col-md-12
-    .row
-      .panel.panel-primary
-        .panel-heading
-          %h3.panel-title Users: #{@users.count}
+  %div.col-md-5
+    %h2 Events: #{@events.count}
+    .well
+      %dl.dl-horizontal
+        %dt All Today's Events
+        %dd #{Event.where(:follow_up => "#{Date.today}").count}
+        %dt Today Completed
+        %dd #{Event.where(:follow_up => "#{Date.today}", :complete => "Complete").count}
+        %hr
+        %dt Total Complete      
+        %dd #{Event.where(:complete => "Complete").count}
+        %dt Total Pending     
+        %dd #{Event.where(:complete => "Pending").count}
+        %dt Total Hold     
+        %dd #{Event.where(:complete => "Hold").count}
+        %dt State to be Set     
+        %dd #{Event.where(:complete => "Set State").count}
+        %hr
+        %dt Total Events     
+        %dd #{Event.count}
+  %div.col-md-offset-1.col-md-6
+    %h2 Users: #{@users.count}
+    .well
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Name
+            %th Email
+        %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.email.split('@')[0].capitalize
+            %td= user.email
 
-        .panel-body
-          .col-md-6
-            .well
-              %h3 All Today's Events : #{Event.where(:follow_up => "#{Date.today}").count}
-              %h3 Today's Complete Events : #{Event.where(:follow_up => "#{Date.today}", :complete => "Complete").count}
-              %hr
-              %h3 Total Complete     : #{Event.where(:complete => "Complete").count}
-              %h3 Total Pending     : #{Event.where(:complete => "Pending").count}
-              %h3 Total Hold     : #{Event.where(:complete => "Hold").count}
-              %h3 State to be Set     : #{Event.where(:complete => "Set State").count}
-              %hr
-              %h3 Total Events     : #{Event.count}
-          .col-md-6
-            .well
-              %table.table.table-striped
-                %thead
-                  %tr
-                    %th Name
-                    %th Email
-                %tbody
-                  - @users.each do |user|
-                    %tr 
-                      %td 
-                        = user.email.split('@')[0].capitalize
-                      %td
-                        = user.email
 
+ 
 %div.col-md-12
   .row
     .panel.panel-primary
