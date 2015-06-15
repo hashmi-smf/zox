@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -52,9 +52,6 @@ gem 'redis-rails'
 gem 'exception_notification'
 gem 'haml'
 gem 'haml-rails'
-gem 'carrierwave'
-gem "paperclip", "~> 4.2"
-gem "gon"
 gem "font-awesome-sass", "~> 4.3.0"
 group :development, :test do
   gem 'pry'
