@@ -1,0 +1,32 @@
+.container
+  .row
+    = simple_form_for @event do |f|
+      = f.error_notification
+
+      .form-inputs
+        .col-md-4
+          = f.input :name, placeholder: "Name", disabled: current_user.role != "admin"
+          = f.input :mobile, placeholder: "Mobile", disabled: current_user.role != "admin"
+          = f.input :email, placeholder: "Email", disabled: current_user.role != "admin"
+          = f.input :budget, placeholder: "Budget", disabled: current_user.role != "admin"
+          = f.association :user, disabled: current_user.role != "admin"
+          = f.association :lead, disabled: current_user.role != "admin"
+          = f.association :site, disabled: current_user.role != "admin"
+          
+
+        .col-md-5
+          .well
+            = f.input  :status , placeholder: "Write the current status..." 
+            = f.input  :follow_up
+            = f.input  :description, placeholder: "Descripiton"
+            = f.select(:complete, options_for_select([['Set State', 'Set State'],['Complete', 'complete'], ['Pending','Pending'],['Hold','Hold']]), {prompt: "CurrentState"}, {class: "form-control"})
+        = f.submit 'Submit Event', class: 'btn btn-success btn-block'   
+
+
+      
+      
+        
+
+    
+
+    

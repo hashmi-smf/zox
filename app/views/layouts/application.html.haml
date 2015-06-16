@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "zox"
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = yield(:head)
+  
+  %body{class: normalized_controller_name}
+    -#nav
+    .container
+      = render 'shared/nav'
+    
+    -# header
+    %h1.page-header
+      .container
+        = content_for?(:header) ? yield(:header) : @title
+        - if content_for?(:secondary_nav)
+          .pull-right= yield(:secondary_nav)
+    -# flash messages
+    #flash-messages.container= bootstrap_flash
+    -# content
+    .container
+      .content
+        = yield
+    
+    -# footer
+    %footer
+      .container
+        %p.muted
+          %span
+            Cosmicvent Software &copy; 2015. All Rights Reserved.
+    = javascript_include_tag "application"
+    = yield(:javascript)

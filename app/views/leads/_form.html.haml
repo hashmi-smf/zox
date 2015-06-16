@@ -1,0 +1,9 @@
+.container
+  .row
+    = simple_form_for @lead,  html: { class: "form-horizontal", style: "display:inline;" } do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, placeholder: "Name"
+        = f.input :website, placeholder: "website"
+      .form-actions
+        = submit_tag 'Submit Lead', class: "btn btn-primary"
