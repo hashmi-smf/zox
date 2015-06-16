@@ -3,7 +3,7 @@ class CreateLeads < ActiveRecord::Migration
     create_table :leads do |t|
       t.string :name
       t.string :website
-      t.string :phone
+      
 
       t.timestamps null: false
     end
