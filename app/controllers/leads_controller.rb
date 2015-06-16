@@ -44,7 +44,7 @@ class LeadsController < ApplicationController
   end
 
   def lead_params
-     params.require(:lead).permit(:name, :website)    
+     params.require(:lead).permit(:name, :website, :phone)    
   end
 end
 
